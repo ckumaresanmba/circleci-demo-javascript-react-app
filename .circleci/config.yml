@@ -3,6 +3,17 @@ workflows:
   test-deploy:
     jobs:
       - test
+  nightly-workflow:
+    triggers: 
+      - schedule:
+        cron: "* * * * *"
+        filters:
+          branches:
+            only:
+              - main
+    jobs:
+      - test
+    
 jobs:
   test:
     docker:
@@ -15,4 +26,6 @@ jobs:
       - run:
           name: Unit tests
           command: npm run test
+
+    
   
