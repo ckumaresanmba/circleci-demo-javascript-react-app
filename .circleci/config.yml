@@ -6,11 +6,11 @@ workflows:
   nightly-workflow:
     triggers: 
       - schedule:
-        cron: "* * * * *"
-        filters:
-          branches:
-            only:
-              - main
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - test
     
