@@ -4,7 +4,7 @@ workflows:
     jobs:
       - unit-test:
         requires:
-          - version-check
+          version-check
       - version-check
   nightly-workflow:
     triggers: 
