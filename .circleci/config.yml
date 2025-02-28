@@ -6,9 +6,6 @@ workflows:
       - unit-test:
         requires:
           - version-check
-      
-  nightly-workflow:
-    triggers: version: 2.1
 
 workflows:
   test-deploy:
