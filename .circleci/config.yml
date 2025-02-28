@@ -1,11 +1,4 @@
 version: 2.1
-workflows:
-  test-deploy:
-    jobs:
-      - version-check
-      - unit-test:
-        requires:
-          - version-check
 
 workflows:
   test-deploy:
@@ -46,36 +39,3 @@ jobs:
       - run:
           name: Check version
           command: npm --version
-
-      - schedule:
-          cron: "58 * * * *"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - unit-test
-
-    
-jobs:
-  unit-test:
-    docker:
-      - image: cimg/node:23.8.0
-    steps:
-      - checkout
-      - run: 
-          name: Install dep
-          command: npm install
-      - run:
-          name: Unit tests
-          command: npm run test
-  version-check: 
-    docker:
-      - image: cimg/node:23.8.0
-    steps:
-      - run:
-          name: Check version
-          command: npm --version
-
-    
-  
