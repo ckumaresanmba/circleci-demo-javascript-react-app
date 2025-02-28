@@ -28,7 +28,8 @@ jobs:
       - run:
           name: Unit tests
           command: npm run test
-  version-check:        
+  version-check: 
+    steps:
       - run:
           name: Check version
           command: npm --version
