@@ -22,8 +22,8 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - run:
-          name: Install tar (required for workspace)
-          command: yum install -y tar
+          name: Install tar & gzip (required for workspace)
+          command: yum install -y tar gzip
       - attach_workspace:
           at: /app
       - run:
