@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import './App.css';
 
 import Layout from './Components/Layout';
@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Header title="Baby Hippo Gram"/>
+        <Header title="Baby Hippo Gram ---"/>
         <Container>
           <Card cards={ this.state.cards } />
         </Container>
